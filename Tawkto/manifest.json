@@ -1,0 +1,24 @@
+{
+  "name": "Tawkto Tool",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage", "declarativeContent", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["js/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
